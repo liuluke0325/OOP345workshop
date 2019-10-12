@@ -1,0 +1,26 @@
+
+1.ƒnThe reason for using the vector container rather than any other available in the STL. 
+
+Vector works as the array, we can easy to add or remove the element at the end of the vector.
+In this case, we don¡¦t need to use the iterator to locate different index. As a result, we can simply use the vector to finish the work.
+std::vector<iProduct*> products;
+this->products.push_back(readRecord(file));
+
+2.Why there is no need to deallocate the dynamically allocated memory in your own code. 
+Because the vector will automatically deallocate the memory for us, we don¡¦t need to work on our own.
+
+
+How the range-based for simplifies coding in this case. 
+	for (auto& i : this->products)
+		{
+			os << *i;
+			total += i->price();
+		}
+3.Range-based is another type of for loop.
+Without mentioning the index, it will go through every elements in the array. 
+As a result, if we don¡¦t need to work on the index, the range based can shorten our code.
+
+
+
+Quiz reflection
+No quiz last week.

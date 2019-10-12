@@ -1,0 +1,20 @@
+
+1.	the reason for the difference between the copy and move operations 
+
+Because of the different purpose, we have the copy and move operations.
+If the source data still exist after being assigned to another object, then we need to use copy operation.
+However, if the source data does not exist after being assigned to another object, then we need to use move operation.
+As a result, after move constructor(Text d = std::move(a)) and move assignment operator(a = std::move(d)), the original object¡¦s data will be removed.
+
+
+
+
+
+
+2.	the dynamic allocation of addresses to objects instead of objects themselves 
+The benefit of using dynamic allocation is that the program will require the proper size of memory from the heap at run time.
+In the workshop, we need to read the text file first and then store the records into string objects.
+However, before we read the file, we have no idea what the size of the record is.
+As a result, we cannot directly use static string object array to store the records.
+We need to count the record first and then allocate the proper size of memory (this->pstr = new string[numOfString])
+This is the reason that we need to use dynamic allocation of addresses to objects.

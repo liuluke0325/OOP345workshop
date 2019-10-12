@@ -1,0 +1,38 @@
+
+1. Binary file operations 
+
+Binary access will read or write the data without formatting. The benefit of using Binary access is that it will not lose or change any information for the data.
+
+//Write the file in binary mode
+ofstream f(file, std::ios::binary);
+
+//open the file to read in binary mode
+	f.open(file, ios::binary);
+
+2. Binding a function to its arguments 
+The purpose of bind() means to bind one or several arguments to a function object. When we call the function object, the meaning is the same as calling the function with specific arguments. The benefit of using bind function arguments is that it can prevent the code duplication and easier to maintain.
+			t[i] = thread(bind(converter, text + i * eachSection, key, (i < num - 1 ? eachSection : nbytes - eachSection * i), Cryptor())); 
+
+
+
+
+3. Multi-threading 
+Thread means the sequence of the program(process) which can be executed by scheduler independently. When the operating system executes the multi treads at the same time, it is multi-threading. Because nowadays the hardware usually has multi-core CPU, using multi-threading can reduce the calculation and execution time.
+
+// create multi-threading
+
+for (size_t i = 0; i < num; i++)
+		{
+			t[i] = thread(converter, text + i * eachSection, key, (i < num - 1 ? eachSection : nbytes - eachSection * i), Cryptor()); // last one length should be total - rest
+		}
+
+//join all the treads.
+		// join all 
+		for (size_t i = 0; i < num; i++)
+		{
+			t[i].join();
+		}
+
+Quiz 8 reflect: 19/20
+
+question 16: Because the same string literal will be allocated in the same memory, the equality operators of two "Hello" will return true.
